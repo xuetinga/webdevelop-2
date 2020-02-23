@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>animate</title>
+	<style type="text/css">
+		.banner{
+			width: 80px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+			left: 0;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="banner" id="banner"></div>
+</body>
+<script src="大作业/animate.js"></script>
+<!-- 就是调用这个animate -->
+<script type="text/javascript">
+	var banner = document.getElementById('banner');
+	function cb1() {
+		alert("动画执行结束");
+	}
+	animate(banner,{left:1000},cb1);
+</script>
+</html>

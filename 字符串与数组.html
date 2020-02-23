@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>字符串的各种方法</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	
+	var str = "heykongcanyouhearme!";
+	console.log(str.length);//20
+	console.log(str.charAt(2));//y
+	var index = str.indexOf("kong");//存在的情况，返回的是当前字符串首次出现的位置；
+	var index1 = str.indexOf("hhah");//
+	console.log(index);//输出3
+	console.log(index1);//输出-1；
+
+	var childstr = str.slice(4,8);//注意这两个数值，end的时候不包括。
+	var childstr1 = str.slice(-3);//负数从最后面开始
+	document.write(childstr +'<br/>');//ongc  是4567
+	document.write(childstr1 +'<br/>');//输出me! 
+
+
+	var str1 = "hey + kong + can + you + hear +me ";
+	var arr  = str1.split("+");//这个方法是以特定的字符来分割字符来得到字符串。并且将字串只作为数组元素存在数组之中。
+	document.write(arr +'<br/>');//这里的arr已经是一个数组啦！！！这不是有一个逗号吗 就阔以看出来啦
+	for (var i = 0; i < 6; i++) {
+		console.log(arr[i]);
+	}
+
+</script>
+</html>

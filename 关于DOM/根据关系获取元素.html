@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>根据关系获取元素</title>
+</head>
+<body>
+	<ul id="newList">
+		<li>第一个节点</li>
+		<li>第二个结点</li>
+		<li>第三个结点</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	/*
+		dom对象.childNodes
+		表示子节点的集合，包含空格，注释，实际的网页元素。
+	*/
+	var newList = document.getElementById("newList");//得到这个节点
+	console.log(newList.childNodes);//得到子节点,会有三个元素
+	console.log(newList.children);//获取的元素子节点，没有文本，不包含空格和注释，这里只有一个元素。就是实际网页元素的子节点的集合。
+	for (var i = 0; i < newList.children.length; i++) {
+		newList.children[i].innerHtTML= "元素子节点";
+		console.log(newList.children[i].innerHtTML);
+	}
+
+</script>
+</html>

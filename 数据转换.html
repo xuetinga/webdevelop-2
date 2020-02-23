@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>课上练习类型转换</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript" >
+	var a ='123.456IMG';
+	var a1 = parseInt(a);//123
+	var a2 = parseFloat(a);//123.456
+	var a3 = Number(a);//NaN  因为里面包括字母。
+	document.write("a1="+ a1+"<br/>" + "a2="+a2+'<br/>'+"a3="+a3+'<br/>');
+	document.write(typeof a2 +'<br/>')//number
+
+	var b = 3.1415926;
+	var b1 = b+"";
+	document.write(typeof(b1)+'<br/>');//string
+
+	var c = 'img' + 3 +'.jpg';
+	var c1 = !! c;
+	alert( c1);//类型是布尔。 结果是true。
+	document.write(c);//img3.jpg
+</script>
+</html>

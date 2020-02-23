@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>删除属性</title>
+	<style type="text/css">
+		td{
+			width:100px;
+			border:1px solid pink;
+		}
+	</style>
+</head>
+<body>
+	<table border="2" id=tb1> 
+		<tr>
+			<td><button>删除本行1</button></td>
+			<td>haha</td>
+			<td>heihei</td>
+			<td>xixi</td>
+		</tr>
+		<tr>
+			<td><button>删除本行2</button></td>
+			<td>hahaha</td>
+			<td>heiheihei</td>
+			<td>xixixi</td>
+		</tr>
+		<tr>
+			<td><button>删除本行3</button></td>
+			<td>haha</td>
+			<td>heihei</td>
+			<td>xixi</td>
+		</tr>
+		<tr>
+			<td><button>删除本行4</button></td>
+			<td>hahah</td>
+			<td>heiheih</td>
+			<td>xixix</td>
+		</tr>
+		<tr>
+			<td><button>删除本行5</button></td>
+			<td>haha</td>
+			<td>heihei</td>
+			<td>xixi</td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript">
+	/*
+		流程
+		第一步 得到要操作的网页元素对应的dom对象
+		第二步进行事件的绑定 这个dom元素可能是集合 节能是一个对象
+		第三步触发事件的具体操作（网页元素的修改  样式更改啥的）
+	*/
+	var btnlist = document.getElementsByTagName("button");//得到了所有按钮的dom对象
+	var td1 = document.getElementById("td1");
+
+	for (var i = 0; i < btnlist.length; i++) {
+		btnlist[i].onclick = function(){
+			var trNode = this.parentNode.parentNode;//btn的父元素的父元素 得到了tr的dom对象
+			//移除子节点 已知父节点的情况下
+			td1.children[0].removeChild(trNode);//浏览器默认有tbody所以再写一个children
+
+		}
+	}
+
+</script>
+</html>

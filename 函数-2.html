@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>函数式编程</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	//??????????
+	function test0(){
+		console.log("hey  kong");
+	}
+	function test1(){
+		return test0();
+	}
+	function test2(fn){
+		fn(test1);
+	}
+	test2(test1);
+	//再加个（）就可以执行test0 想执行谁就给谁的后面加括号
+	//定义了2   函数是fn 希望他到2里面执行 把函数作为参数传进来 然后还可以执行这个函数。
+
+	//????
+	function testt0(){
+		console.log("hey  kong can you hear me");
+	}
+	function testt1(){
+		return testt0;
+	}
+	function testt2(fn){
+		return testt1;
+	}
+	testt2(testt1)()();
+</script>
+</html>

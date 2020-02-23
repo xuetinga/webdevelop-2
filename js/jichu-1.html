@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JS语句块</title>
+</head>
+<body>
+<script>
+	/*语句*/
+	alert("hey girl 欢迎来到刘聪的世界")
+	console.log("can you hear me ")
+	/*语句块*/
+    if(true){
+        document.write(" 忧愁的下午");
+        document.write("<br/>");/*换个行*/
+        document.write(" 心里有点苦 <br/> 走在回家路 <br/> 心里说不出<br/> hey man <br/> can you  hear me");
+       
+    }
+    /* 定义一个变量 这个变量是不用指明类型的。应该是存储了所有的数据类型
+     如果想知道是什么样的类型 就自己看是存的什么样的类型。*/
+    var username = "liuxuanting";
+    username = 1;//这里是不会报错的。
+    console.log(username);
+
+    /*var x = 20；
+    var y = 30；
+    var sum ;
+    sum = x+y;
+    console.log(sum);*/
+    //害  你这里就差一点！！！
+
+    var num1 = 100.0;
+    var str1 = "100";
+    var bool1 = true;
+    var a;
+    var nl  = null;
+
+    console.log(typeof num1);
+    console.log(typeof str1);
+    console.log(typeof bool1);
+    console.log(typeof a);//这就是未声明的变量
+    console.log(typeof nl);//为啥显示object??
+    //在调试的那里就可以知道num1是什么类型。
+
+</script>
+</body>
+</html>

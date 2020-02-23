@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>通过标签名</title>
+	<style type="text/css">
+		div{
+			height: 200px;
+			width: 200px;
+			background-color: pink;
+			float:left;
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1"class="bg" >
+		div1
+	</div >
+	<div class="bg">
+		div2
+	</div>
+	<div class="bg">
+		div3
+	</div>
+
+</body>
+<script type="text/javascript">
+	//通过标签来获取dom元素。注意这里有s因为不只有一个s。
+	var divList =document.getElementsByTagName("div");
+	console.log(divList);//输出会显示一个集合，三个div元素得到的dom元素的集合，有索引
+	console.log(divList[1]);//会得到div2元素。
+	var div1 = document.getElementById("div1");
+	console.log(div1);
+
+	var divList1 = document.getElementsByClassName("bg");
+	console.log(divList1);//这里也是会的到这三个盒子
+
+	
+</script>
+</html>

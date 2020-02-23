@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>location的方法</title>
+</head>
+<body>
+	<input type="button" name="" value="加载新文档" onclick="newDoc()">
+</body>
+<script type="text/javascript">
+	console.log(window.location.host);
+	console.log(location.hostname);
+	console.log(location.href);
+	console.log(location.port);
+	console.log(location.hash);
+	console.log(location.search);
+	function newDoc() {
+		// body...
+		location.reload();
+	}
+</script>
+
+</html>

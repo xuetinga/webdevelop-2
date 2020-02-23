@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+	<title>calculate </title>
+	<meta http-equiv = "Content-Type" content = "text/html;charaset = utf-8"/>
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+  </head>
+ <body>
+	<table>
+			<tr>
+				<td colspan="3" id="result">0</td>
+				<td><button type="button" value="C">C</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" value="1">1</button></td>
+				<td><button type="button" value="2">2</button></td>
+				<td><button type="button" value="3">3</button></td>
+				<td><button type="button" value="+">+</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" value="4">4</button></td>
+				<td><button type="button" value="5">5</button></td>
+				<td><button type="button" value="6">6</button></td>
+				<td><button type="button" value="-">-</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" value="7">7</button></td>
+				<td><button type="button" value="8">8</button></td>
+				<td><button type="button" value="9">9</button></td>
+				<td><button type="button" value="*">*</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" value="0">0</button></td>
+				<td><button type="button" value=".">.</button></td>				
+				<td><button type="button" value="=">=</button></td>
+				<td><button type="button" value="/">/</button></td>
+			</tr>	
+				
+		</table>	
+ </body>
+ <script type="text/javascript">
+ 	/*
+		1.获取到要操作的网页元素。
+		2.给网页元素可以绑定事件。
+		3.触发事件的时候执行事件的回调函数，完成具体的逻辑业务，或者dom操作。
+ 	*/
+ 	 var result = document.getElementById("result");
+ 	 var btn = document.getElementsByTagName("button");//整个网页文档中获取所有的标签。这是个数组 不可以直接加事件
+
+ 	 for (var i = 0; i < btn.length; i++) {
+ 	 	btn[i].onclick = function(){//属性是onclick 将函数赋给属性 方法可以看做是比较特殊的属性。
+ 	 	//console.log(btn[i].innerHTML);//获取标签里面的值
+	 	 	console.log(this.innerHTML);
+	 	 	//在dom对象时间的回调函数中，this指向当前触发时间的dom对象
+	 	 	//先判断innerHTML内容是什么 然后在看着执行什么。
+	 	 	var btnType = this.innerHTML;
+	 	 	switch(btnType){
+	 	 		case "=":
+	 	 			calculate();//再写一个函数来计算值  不是自带的函数哈
+	 	 			break;
+	 	 		case 'C':
+	 	 			clearResult();
+	 	 			break;
+	 	 		default:
+	 	 			showStr(btnType);
+	 	 			break;
+	 	 	}
+ 	 	}
+ 	 }
+ 	var str = "";
+ 	var showStr =function(val){
+ 		str = result.innerHTML;
+ 		if (str==0) {
+ 			str = val;
+ 		}
+ 		else{
+ 			str+=val;
+ 		}
+ 		result.innerHTML = str;
+ 	}
+ 	var clearResult = function(){
+ 		result.innerHTML = "0";
+ 	}
+	var calculate = function(){
+	 	 result.innerHTML = eval(result.innerHTML);
+	 	 
+ 	}
+
+ </script>
+</html>

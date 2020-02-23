@@ -1,0 +1,50 @@
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        var city = new Array();
+        city["广东省"] = ["广州市", "深圳市", "茂名市", "珠海市", "湛江市"];
+        city["广西省"] = ["玉林市", "白色市", "桂林市"];
+        city["湖南省"] = ["长沙市", "岳阳市", "湘潭市"];
+        city["海南省"] = ["三亚市", "三沙市", "海口市"];
+
+         var qu=new Array();
+         qu["广州市"]=["黄浦区","越秀区","番禺区"];
+         qu["玉林市"]=["玉林一区","玉林二区","玉林三区"];
+         qu["长沙市"]=["长沙一区","长沙二区","长沙三区"];
+         qu["深圳市"]=["龙华区","福田区","宝安区"];
+        function sheng() {
+            var sheng = document.getElementById("sheng");
+            for(var i in city) {
+                sheng.add(new Option(i, i), null);
+            }
+        }
+        window.onload = sheng;
+        function shi() {
+            var shi = document.getElementById("shi");
+            var sheng = document.getElementById("sheng").value;
+            shi.options.length = 0;
+            for(var i in city[sheng]) {
+                shi.add(new Option(city[sheng][i], city[sheng][i]), null);
+            }
+        }
+        function que(){
+            var q=document.getElementById("q");
+            var shi=document.getElementById("shi").value;
+            q.options.length=0;
+            for(var i in qu[shi]){
+                q.add(new Option(qu[shi][i],qu[shi][i]),null);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <select id="sheng" onchange="shi()">
+
+    </select>
+    <select id="shi" onchange="que()">
+
+    </select>
+    <select id="q"></select>
+</body>

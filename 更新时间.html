@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>更新时间</title>
+</head>
+<body>
+	<p id="timer"></p>
+</body>
+<script type="text/javascript">
+	var timer = document.getElementByID("timer");
+	var date1 = new Date();
+
+	var interval = setInterval(function(){
+		var hour = date1.getHours();
+		var minute = date1.getMinutes();
+
+		var second = date1.getSeconds();
+		timer.innerHTML =hour +":" + minute +":" + second;
+	},1000)
+</script>
+</html>

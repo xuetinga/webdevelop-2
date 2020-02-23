@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>函数参数</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function sum (x,y){
+		return x+y;
+	}
+	console.log(sum(2));//x是2，y是未被定义的，所以结果NaN
+	console.log(sum(2,3));
+	console.log(sum(2,3,4));//结果是5 ，会被忽略。
+</script>
+</html>

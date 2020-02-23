@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>函数返回值</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function fn1(){
+		return ;//return后的语句不会在执行（满足某个条件，不希望他在执行后面的，可以用这个方法。）没有返回值时候执行结果是undefined。
+		console.log("hello");
+		}
+	console.log(fn1());
+	//三个数比较大小
+	function Max(x,y,z){
+		var max1;
+		var max2;
+		
+		max1 = x>y?x:y;
+		max2 = max1>z?max1:z;
+
+		return max2;
+
+	}
+	var m;
+	m = Max(100,200,2562);
+	document.write("最大是"+m);
+</script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>对象</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var dog = {
+		dogName :"丸子",
+		dogColor:"black",
+		weight:"5kg",
+		height:"20cm",
+		tedian:"有头有脑,可可爱爱",
+		age:1,
+		dance:function()
+		{
+			document.write(this);//就是这个对象的属性和方法。
+			document.write(this.name);
+			document.write("哇偶，he can really dance！！！");
+
+		}
+
+	}
+	/*
+		对象.属性 那属性是字面值，直接查找该属性在对象中是否存在。如果不存在该属性，得到undefined
+		对象【属性】 属性可以是字面值，也可以是变量。
+	*/
+	var name  = dog.dogName;
+	document.write(name+'<br/>');
+	//或者
+	document.write(dog["dogColor"]+'<br/>');
+
+	dog.dance();//直接在浏览器中输出。
+
+	//属性的名字不确定
+	var dheight = "height";
+	document.write(dog[dheight]+'<br/>');
+	//就是yongdheight来接受height属性。
+	//20cm 注意不要接双引号
+
+
+	document.write(dog.dheight+'<br/>');
+	//如果用.访问就不行。输出undefined
+	
+	//添加属性
+	dog.dogName = "嘻嘻";
+	document.write(dog.dogName+'<br/>');
+	//输出嘻嘻
+
+	//删除一个属性
+	delete dog.dogColor;
+	document.write(dog.dogColor);//显示undefined，就表示已经删除掉了
+	console.log(dog);//???
+
+	//进行遍历
+	for(var key in dog){
+		console.log(key+":");
+		console.log(dog[key]);
+	}
+	//遍历修改属性值
+	for(var key in dog){
+		if(key == "age"){//age记得加双引号
+			dog[key] = 123;//这里就是修改
+			
+		}
+		document.write(dog[key]+'<br/>');
+	}
+	//this属性.会输出object就是对象的意思，this就是指向dog这个对象。
+	//dog.dance();
+
+
+</script>
+</html>

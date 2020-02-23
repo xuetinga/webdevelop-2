@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>事件</title>
+	<meta charset="utf-8">
+</head>
+<body onload = "loadEvent()"  onunload="unloadEvent()">
+	<button onclick="login()" >登录</button>
+	<button onmouseover="show()"> 注册</button>
+	<button id="btn"> 抽离</button>
+	<input type="text" name="" value="失去焦点" onblur="blurEvent()"/>
+	<input type="text" name="" value="获得焦点" onfocus="focusEvent()"/>
+	<form onsubmit="submitEvent()">
+		<input type="text" name="">
+		<input type="submit" name="" value="提交">
+
+	</form>
+
+</body>
+<script type="text/javascript">
+
+	/*1.绑定事件的网页元素，事件是绑在元素上的。
+	  2.绑定的事件名称是随意的
+	  3.事件的回调函数（当事件触发的时候调用）
+	  4.
+	*/
+	function login(){
+		alert("按钮被点击啦！");
+	}
+
+	function show(){
+		document.write("你的鼠标移动到了他的上面");
+	}
+
+
+	//抽离
+	var btn = document.getElementById("btn");
+	//绑事件
+	btn.onclick = function(){
+		alert("将代码分离啦");
+	}
+
+	/*浏览器自己解析完成后自己触发的 就是讲所有的html代码解析完成了*/
+	function loadEvent(){
+		alert("页面已经解析完成啦！");
+	}
+
+	/*页面刷新的时候或者页面关闭时触发*/
+	function unloadEvent(){
+		alert("页面已经退出来；");
+	}
+
+	/*
+		失去焦点时会触发
+	*/
+	function blurEvent(){
+		alert("文本框失去焦点啦! 请不要随意点击其他内容奥！");
+	}
+
+	/*
+		获得焦点的时候
+	*/
+	function focusEvent(){
+		alert("文本框you焦点啦 不要再出去啦！！！");
+		//这个框框关不掉诶！
+	}
+
+	/*
+		type必须是submit 才有这个！
+	*/
+	function submitEvent(){
+		alert("你开始提交表单啦！ 让我康康合法嘛！");
+	}
+</script>
+</html>
+<!-- var results="";//这里的result为全局变量
+var calresults="";  function calculater(){	//防止触发两个函数	
+if (event.srcElement.innerText=="="){  
+          return;      
+            }	//c建的清除功能	
+  if(event.srcElement.innerText=="c"){			result="";			display.innerText="0";			return;	}	//接受输入字符串	results+=event.srcElement.innerText;	display.innerText=results;}//计算简单的加减乘除 eval()能运行括号里的js字符串。function resultcalculater(){	calresults=eval(results);	display.innerText=calresults;	}  -->

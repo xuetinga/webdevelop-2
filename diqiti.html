@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>zuoyesaner</title>
+</head>
+<body>
+
+<!-- 定义函数，根据传入时间格式得到当前时间对应格式结果，该结果作为函数返回值，并在控制台输出，传入参数为 YYYY-MM-DD，返回结果2019-10-28  参数为YY-MM-DD时，返回结果19-10-28，参数为YYYY/MM/DD，返回结果为2019/10/28，参数为YY/MM/DD时，返回结果为19/10/28（考虑以上四种情况即可） -->
+</body>
+<script type="text/javascript">
+	var Time = prompt("请写出时间格式");
+	var date1 = new Date();
+		var year = String(date1.getFullYear());
+		var month = date1.getMonth()+1;
+		var date = date1.getDate();
+		document.write(year.slice(2,7));
+	function Timer() {
+		if(Time.slice(-3,-2)== '/' && Time.length == 10)
+		{
+			return year +'/'+ month +'/'+ date;
+		}
+		else if(Time.slice(-3,-2) == '/' && Time.length == 8)
+		{
+			return year.slice(2,5) +'/'+ month +'/' + date;
+		}
+		else if(Time.slice(-3,-2) == '-' && Time.length == 10)
+		{
+			return year +'-'+ month +'-'+ date;
+		}
+		else 
+		{
+			return year.slice(2,5) +'-'+ month +'-'+ date;
+		}
+	}
+	console.log(Timer());
+
+</script>
+<ml>

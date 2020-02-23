@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>对话框</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	window.alert("你好哇");
+	//可以省略window 
+	var result = confirm("确定要离开吗？");
+	if(result){
+		document.write("你竟然如此无情的离开我 我告诉你 不可能！！！！")
+	}
+	else{
+		document.write("就知道你不会离开我啦  做的很好哦！")
+	}
+	//应该有返回值  根据确定还是取消 来确定接下来的执行。
+
+	var pr = prompt("可以告诉我你的微信号码吗？");
+	document.write(pr);
+</script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数组的使用</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<tr>
+		<td >
+			console.log(sum);
+		</td>
+	</tr>
+</body>
+<script type="text/javascript">
+	var arr1 =[1,2,3,4,5,6,7];
+	var arr2 = new Array("hey ","kong ","can  you  hear me ");
+	//或者
+	var arr3 = new Array(3);
+	console.log(arr1);
+	console.log(arr2);
+	console.log(arr3);
+
+	var arr4 = [
+	["第一条","第二条","第三条"],
+	["第四条","第五条","第六条"],
+	["第七条","第八条","第九条"],
+	]
+	console.log(arr4[0][0]);//第一条
+
+	//再加一个元素
+	arr4[4]= ["第八条","第九条","第十条"];
+	console.log(arr4);//直接加到了第四行。
+
+	//把数组中的元素存在表格之中。
+
+	var sum = function(){
+		for (var i = 0; i < 4; i++) {
+			for (var j = 0; j < 3; j++) {
+				document.write(arr4[i][j]);
+				}
+			
+		}
+	}
+	console.log(sum);
+
+
+
+
+	//就是用循环嵌套之前学的表格，然后可以在后期加单元格的样式。
+	var title = ['1','2','3'];
+	function createTableHeader(){
+		document.write("<table>");
+		document.write("<tr>");
+		for (var i = 0; i < title.length; i++) {
+			document.write("<th>");
+			document.write(title[i]);
+			document.write("</th>");
+		}
+		
+	}
+	function createTableContent(){
+		for (var i = 0; i < 4; i++) {
+			document.write("<tr>");
+			for (var j = 0; j < 3; j++) {
+				document.write("<td>");
+				document.write(arr4[i][j]);
+				document.write("</td>");
+				}
+			document.write("</tr>");
+		}
+	}
+	document.write(createTableHeader());
+	document.write(createTableContent());
+
+</script>
+</html>

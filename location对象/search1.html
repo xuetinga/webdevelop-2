@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search函数</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function CreateArg(search){
+		var search = search.slice(1);
+		var argArr = search.split("&");
+		for (var i = 0; i < argArr.length; i++) {
+			var arr1 = argArr[i].split("=");//进行处理
+			this[arr1[0]] = arr1[1];
+		}
+	}
+	var argObj = new CreateArg(location.search);
+	console.log(argObj);
+</script>
+</html>

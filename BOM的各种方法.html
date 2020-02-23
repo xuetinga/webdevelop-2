@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>History的各种方法</title>
+</head>
+<body>
+	<input type="button" name="back" value="测试回退" onclick="goBack()">
+	<a href="http://www.baidu.com" >点击一下</a>
+	<input type="button" name="forward" value="测试前进" onclick="Forward()">
+	<input type="button" name="goon" value="测试跳转" onclick="goOn()">
+</body>
+<script type="text/javascript">
+	function goBack() {
+		window.history.back();
+	}
+	function Forward(){
+		window.history.forward();
+	}
+	function goOn(){
+		window.history.go(1);//就是前进到你第一个访问的页面。
+	}
+</script>
+</html>

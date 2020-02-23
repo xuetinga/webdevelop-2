@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>添加元素</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	arr = [1,2,3,4,56,2,7];
+	var s1 = arr.unshift(2);//这里会返回新数组的长度。这里会改变原数组的值。不是创建一个新的。
+	document.write(s1 + '<br/>');//8
+	document.write(arr + '<br/>')//原数组的开头加上2；
+
+	var s2 = arr.push(1,2,0);//这个方法是往最后面加元素，也会改变原数组。
+	document.write(s2 + '<br/>');//11 这个11是长度
+	document.write(arr + '<br/>');// 2,1,2,3,4,56,2,7,1,2,0
+
+	var s3 = arr.concat(s1,s2);//往原数组上面进行拼接，后面传入的参数，
+//	concat里面可以添加数组，多个数组会合并成为一个数组。concat不会对原数组产生影响。
+	document.write(s3 + '<br/>');// 2,1,2,3,4,56,2,7,1,2,0,8,11  只是加上啦8和11；
+	document.write(arr + '<br/>');//2,1,2,3,4,56,2,7,1,2,0  没有改变原数组
+
+	var s4 = arr.splice(0,2,"j");//这是添加一个新的元素到指定的位置。
+	document.write(s4 + '<br/>');//2 1
+	document.write(arr + '<br/>')；//j,2,3,4,56,2,7,1,2,0
+
+	/*var arr1 = [1,2,3,4,5]; 
+	arr1.forEach(function(value,index,arr)){
+		arr1[index] = 2*value;
+		document.write(value);
+		document.write(index);
+		document.write(arr);
+
+	}*/
+	//课下再写一下
+
+
+	var str ="no zuo no die";
+	var arr =[];
+	var ss1 = str.split(" ");
+	document.write(ss1+'<br/>');
+	document.write(ss1[0]+'<br/>');
+	for(var i =0;i<4;i++){
+		var arr1 = [];
+		arr1[i] = ss1[i].charAt(0);
+		var arr2 =[];
+		arr2[i] = arr1[i].toUpperCase();
+		ss1[i][0] = arr2[i];
+		document.write([i]+'<br/>');
+	}
+
+
+
+</script>
+</html>

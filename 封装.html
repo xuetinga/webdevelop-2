@@ -1,0 +1,55 @@
+
+public class Employee {
+
+
+	private String number;
+	private String name;
+	private double height;
+	private double weight;
+	private double BMI;
+	//属性都是私有的！
+	
+	public double getBMI() {
+		BMI = weight / (height*height);
+		return BMI;
+	}//返回的是一个double类型  方法是共有的 
+	
+	public String getNumber() {
+		return number;
+	}//返回的是string类型的  输出的时候是输出getnumber 然后输入的时候是通过setnumber来输入的。
+	
+	public void setNumber (String number) {
+		this.number = number;
+	}//就是传入了一个number 然后赋给了这一个值。 然后这个this就等于 ？？？
+	
+	public String getName() {
+		return name;
+	}
+	public void setName (String name) {
+		this.name = name;
+	}
+	
+	public double getHeight() {
+		return height;
+	}
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	
+	public double getWeight() {
+		return weight;
+	}
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+	
+	public String toString() {
+		return "number= " + number+",name="+name +
+				", hegight=" + height + ",weight =" + weight +",BMI="+ BMI ;
+		
+	}
+				
+}
+	
+	
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>定时执行</title>
+</head>
+<body>
+	<button id="stop">清除定时执行</button>
+</body>
+<script type="text/javascript">
+	//应用于那个图片的自动切换
+	var intervalId = setInterval(callback,3000);
+	function callback (){
+		document.write("每想你一次就掉一粒沙，从此形成了撒哈拉~"+ '<br/>');
+		console.log((new Date()).toLocaleString());
+	}
+	var stop = document.getElementById("stop");
+	stop.onclick = function(){
+		clearInterval(intervalId);
+	}
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>构造函数</title>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+		function CreateMovie(movieName,movieType,rating,showTime){
+		//直接往this上面加就可以
+
+		this.movieName = movieName;
+		this.movieType = movieType;
+		this.rating = rating;
+		this.showTime = showTime;
+		this.getNextShow = function(){
+			var time =10.0;
+			for(var i =0 ;i<this.showTime.length;i++){
+			if(parseInt(this.showTime[i])>time){
+				return this.showTime[i];
+				break;
+			}
+		}
+	}
+}
+//记得调用的时候加上new  还有所有首字母都是大写！
+	var movie1 = new CreateMovie("落水狗","好看的","9.9",["9.00","10.00","11.00"]);
+	var movie2 = new CreateMovie("落水狗","好看的片","10.0",["3.00","4.00","5.00"]);
+	document.write(movie1);
+	console.log(movie2);
+</script>
+</html>

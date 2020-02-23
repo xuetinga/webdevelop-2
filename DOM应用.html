@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<h1>标题</h1>
+		<a href="demo1.html" id="list">超链接</a>
+	</div>
+</body>
+<script type="text/javascript">
+	/*
+		元素结点，属性结点，文本结点，都阔以看做是一个对象。
+	*/
+	var list  = document.getElementById("list");//元素结点的dom对象。
+	var linkHref = list.getAttributeNode("href");//获取属性结点。
+	console.log(typeof linkHref);//类型是一个对象object 
+	var text = list.firstChild;
+	console.log(text);
+	//nodeType属性是一个只读的属性，不能给他赋值，
+	console.log(list.nodeType,linkHref.nodeType,text.nodeType);//1 2 3
+	console.log(list.nodeName,linkHref.nodeName,text.nodeType);//A id 3
+	console.log(list.nodeValue,list.nodeValue,text.nodeValue);//null null "超链接"
+</script>
+</html>

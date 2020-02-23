@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>拼接运算符号</title>
+</head>
+
+<body>
+
+<script>
+    var num1 = 5;
+    var num2 = 5 ;
+    var num3 = num1 +num2;
+    console.log(typeof num3);
+
+    var num1 = "liu";
+    var num2 = "cong" ;
+    var num3 = num1 +num2;
+    console.log( num3);
+    // 这里会得到字符串
+
+    // 两边都是数字 就是加法运算
+    // 如果出现了字符串 进行字符串的拼接
+//使用"+"拼接字符串
+//从左往右计算，当"+"运算符左右为字符串类型时，为拼接符号
+    var x = 3;
+    var y = "3";
+    var z = 5;
+    z += y;
+    var a = y + z;
+    document.write(x+y+'<br/>');//33
+    document.write(z+'<br/>');//53
+    document.write(a+'<br/>');//353
+    document.write(x+y+z+'<br/>');//3353
+
+    var num=3+3+"5"+3+3;
+    console.log(num);
+    console.log(typeof num); 
+    
+    // 这里怎么弄？
+
+    /*关于运算符*/
+    
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js封装</title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		.box{
+			width:1200px;
+			height: 300px;
+			border:1px solid red;
+			margin:100px auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.slider{
+			width: 8400px;
+			position: absolute;
+			left: -1200px;
+		}
+		.slide{
+			width: 1200px;
+			overflow: hidden;
+			float: left;
+		}
+		.box>span{
+			display: block;
+			width: 30px;
+			height: 50px;
+			text-align: center;
+			cursor: pointer;/*移上去光标不同*/
+			color:#000;
+			top: 175px;
+			line-height: 50px;
+			background:rgb(255,0,0);
+			font-size: 30px;
+			position: absolute;
+			opacity: 0;
+
+		}
+		#left{
+			left: 30px;
+		}
+		#right{
+			right: 30px;
+		}
+		.nav{
+			position: absolute;
+			left: 500px;
+			bottom: 20px;
+		}
+		.nav>li{
+			float: left;
+			width: 20px;
+			height: 20px;
+			background-color: #ccc;
+			/*就是下面那个圆圈 默认灰色*/
+			cursor: pointer;
+			margin:0 10px;
+			border-radius: 50%;
+			color: black;
+			text-indent: 5px;
+		}
+		.nav .active{
+			background-color: red; 
+			/*就是移动的时候 加上这个类 就变成了红色*/
+			color: white;
+		}
+		#active{
+			color: red;
+
+		}
+		.header{
+			height: 20px;
+			background-color: #ccc;
+			color: red;
+			position: relative;
+			margin-top: 90px;
+		}
+		#img{
+			position: absolute;
+			margin-left:300px;
+		}
+		
+		#box1{
+			width: 1000px;
+			height: 20px;
+			margin-left: 320px;
+			margin-top: 0px;
+			overflow: hidden;
+			position: absolute;
+		}
+		#warning{
+			width: 400px;
+			position: absolute;
+			overflow: hidden;
+		}
+	
+	</style>
+</head>
+<body>
+	<div class="header">
+		<img src="images/a15.png" id="img">
+		<div id="box1">
+			<div id="warning" style="margin-left: 900px;" >
+				温馨提示最近有不少不法分子在网上骗人，请大家注意!!!
+			</div>	
+		</div>
+	</div>
+	
+	<div class="box" id="box">
+		
+		<div class="slider" id="slider">
+			
+			<div class="slide"><img src="images/b5.png" alt=""></div>
+			<div class="slide"><img src="images/b1.png" alt=""></div>
+			<div class="slide"><img src="images/b2.png" alt=""></div>
+			<div class="slide"><img src="images/b3.png" alt=""></div>
+			<div class="slide"><img src="images/b4.png" alt=""></div>
+			<div class="slide"><img src="images/b5.png" alt=""></div>
+			<div class="slide"><img src="images/b1.png" alt=""></div>
+		</div>
+		<span id="left"> < </span>
+		<span id="right"> > </span>
+		<ul class="nav" id="nav">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		
+	</div>
+</body>
+<script src="animate.js"></script>
+<script type="text/javascript" >
+	var box = document.getElementById("box");
+	var oNavlist = document.getElementById("nav").children;//那5个小按钮
+	var slider = document.getElementById('slider');
+	var left = document.getElementById('left');
+	var right = document.getElementById('right');
+	var index  = 1;//哪一个图片在显示就是他的下标
+	var timer;
+	var isMoving = false;
+	var warning = document.getElementById('warning');
+	console.log(parseInt(warning.style.marginLeft));
+	setInterval(function(){
+		if (parseInt(warning.style.marginLeft)<-300) {
+			warning.style.marginLeft = 1000+"px";
+		}
+		else{
+		    warning.style.marginLeft = (parseInt(warning.style.marginLeft)-1) +"px";
+		}
+	},10);
+	// var interval;
+	// //滚动实现
+	// interval=setInterval(function(){
+	// 	if(parseInt(rolling.style.marginLeft)<-400){
+	// 		rolling.style.marginLeft=1000+"px";
+	// 	}
+	// 	rolling.style.marginLeft=(parseInt(rolling.style.marginLeft)-1)+"px";
+	// },10)
+	//左右箭头
+	function next(){
+		if (!isMoving) {
+			isMoving = true;
+			index++;
+			navmove();
+			animate(slider,{left: -1200*index},function () {//这个是他的回调函数。
+					if (index >5 ) {
+						slider.style.left = "-1200px";
+						index = 1;//要重新附一个初始值 要不然index就会变成7 8 了
+					}
+					isMoving = false;
+			});
+		}
+		
+	}
+	function prev(){
+		if (isMoving) {
+			return;
+		}
+		isMoving = true;
+		index--;
+		navmove();
+		animate(slider,{left: -1200*index},function () {//这个是他的回调函数。
+				if (index ===0 ) {
+					slider.style.left = "-6000px";
+					index = 5;//要重新附一个初始值 要不然index就会变成-1 了
+				}
+				isMoving = false;
+		});
+	}
+	//在animate外面套一个定时器 每隔多少动一次。
+	var timer = setInterval(next,2000);
+
+	//这个是划上去轮播图就停了
+	box.onmouseover = function () {
+		//alert("划上去了");
+		
+		animate(left,{opacity:50});//这个是让左右的箭头淡入淡出的
+		animate(right,{opacity:50});
+		clearInterval(timer);//为撒没停？？？
+	}
+
+	//划出的时候。
+	box.onmouseout = function(){
+		animate(left,{opacity:0});
+		animate(right,{opacity:0});
+		timer = setInterval(next,2000);
+
+	}
+
+	right.onclick = next;//那两个箭头的使用。
+	left.onclick = prev;
+
+//改变小图标的样式
+	function navmove(){
+		for (var i = 0; i < oNavlist.length; i++) {
+			oNavlist[i].className = "";
+		}//这里是去掉原来有的类名 
+		if(index >5){
+			oNavlist[0].removeAttribute("id");
+			oNavlist[0].className = "active";
+			// oNavlist[0].style.color = "white";
+		}
+		else if (index <=0) {
+			oNavlist[4].className = "active";
+			oNavlist[0].removeAttribute("id");
+		}
+		else{
+			oNavlist[0].setAttribute("id","active");
+			oNavlist[index-1].className = "active";
+			}
+		
+
+	}
+
+	//点击小按钮的时候
+	for (var i = 0; i < oNavlist.length; i++) {
+		oNavlist[i].index = i;//得到当前下面那个点的下标。
+		oNavlist[i].onclick = function(){
+			index = this.index + 1;
+			navmove();
+			animate(slider,{left:-1200 * index});
+		}
+	}
+
+	// function next(){
+	// 	if (isMoving) {
+	// 		return;
+	// 	}
+	// 	isMoving = true;
+	// 	index++;
+	// 	navmove();
+	// 	animate(slider,{left:-1200*index},function(){
+	// 		if (index == 6) {
+	// 			slider.style.left = "-1200px";
+	// 			index = 1;
+	// 		}
+	// 		isMoving = false;
+	// 	})
+	// }
+	// function prev(){
+	// 	if(isMoving){
+	// 		return;
+	// 	}
+	// 	isMoving = true;
+	// 	index--;
+	// 	navmove();
+	// 	animate(slider,{left:-1200*index},function(){
+	// 		if (index==0) {
+	// 			slider.style.left = "-6000px";
+	// 			index = 5;
+	// 		}
+	// 		isMoving = false;
+	// 	});
+ // 	}
+	
+	// timer = setInterval(next,3000);
+</script>
+</html>

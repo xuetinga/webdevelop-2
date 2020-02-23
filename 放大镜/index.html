@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{margin:0; padding:0;}
+
+	#box{width:1200px;height:800px;position:relative; margin:100px auto;border: 1px solid black;}
+	#img1{width:600px;height:800px;position:absolute;left:0;top:0;}
+	#slider{width:150px;height:150px;position:absolute;left:0;top:0;background:#ccc;opacity:0.4;cursor: move;display:none; filter:alpha(opacity=40);}
+	#img2{
+    position:absolute;
+    right:0;top:0;
+    display:none;
+    width:600px;
+    height:800px;
+    overflow:hidden;
+     /*超出就会被隐藏*/
+     /*大图显示的距离就是小图距离左侧的距离的多少倍*/
+   }
+	#Bimg{position:absolute;left:0;top:0;}
+</style>
+</head>
+
+<body> 
+ <div id="box">
+    <div id="img1">
+         <img src="images/xiao1.jpg" width="600" height="800" id="Simg"/>
+         <div id="slider"></div>
+  	</div>
+       
+    <div id="img2">
+        <img src="images/xiao1.jpg"  id="Bimg"/>
+    </div>
+  
+  </div>
+
+<script >
+  var box = document.getElementById('box');
+  var img1 = document.getElementById('img1');
+  var img2 = document.getElementById('img2');
+  var Bimg = document.getElementById('Bimg');
+  var slider = document.getElementById('slider');
+  
+  img1.onmouseover= function(){
+    slider.style.display = "block";//这是那个上面小
+    img2.style.display = "block";
+  }
+  img1.onclick = function(e){
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
+    var boxLeft = box.offsetLeft;
+    var boxTop = box.offsetTop;
+    var sliderWidth = slider.offsetWidth;
+    var sliderHeight = slider.offsetHeight;
+    var sliderLeft = mouseX-boxLeft-sliderWidth/2;
+    var sliderTop = mouseY - boxTop - sliderHeight/2;
+    console.log(mouseX);
+    console.log(mouseY);
+
+    if (sliderLeft<=0) {
+      sliderLeft =0;
+    }
+    else if(sliderLeft>= (img1.offsetWidth - sliderWidth)){
+      sliderLeft = img1.offsetWidth - sliderWidth;
+    }
+    if(sliderTop <=0){
+      sliderTop =0;
+    }
+    else if(sliderTop>=img1.offsetHeight -sliderHeight){
+      sliderTop = img1.offsetHeight - sliderHeight;
+    }
+    slider.style.left = sliderLeft + "px";
+    slider.style.top = sliderTop + "px";
+    
+    var percent = Bimg.offsetWidth / Simg.offsetWidth ;//这是那个放大的倍数。
+    Bimg.style.left = -(sliderLeft*percent) + "px";//大图到左侧距离应该是负的。
+    Bimg.style.top = -(sliderTop*percent) + "px";
+
+
+  }
+  img1.onmouseout = function(){
+    slider.style.display = "none";
+    img2.style.display= "none";
+  }
+  
+</script>
+</body>
+</html>

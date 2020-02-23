@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>zuoye4</title>
+</head>
+<body>
+
+	<button id="btn">猜数字<tton>
+	<button id="btn1">输出猜过的数字<tton>
+</body>
+<script type="text/javascript">
+    var num = Math.random();
+    num = Math.ceil(num*100);
+	var btn = document.getElementById('btn');
+	var ci=10;
+	var arr=[];
+	var j=0;
+	btn.onclick = function(){
+		
+			var a=prompt("请输入数字");		
+			arr[j] = a;
+			
+			console.log(ci);
+			if(a>num){
+			    alert("猜大了");
+			    j++;
+			    ci--;
+		    }
+		    else if(a<num){
+			    alert("猜小了");
+			    j++;
+			    ci--;
+		    }
+		    else{
+			    alert("恭喜你成功猜中数字");
+		    }
+		}
+		if(ci==0){
+			alert("游戏结束");
+		}
+	
+	btn1.onclick = function(){
+		console.log(arr);
+	}
+</script>
+</html>
+
+
+

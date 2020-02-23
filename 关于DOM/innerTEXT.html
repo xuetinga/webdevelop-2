@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>innertext</title>
+</head>
+<body>
+	<p id="p1" >
+		hey
+	</p>
+</body>
+<script type="text/javascript">
+	var p1 = document.getElementById("p1");
+	p1.onclick = function(){
+		p1.innerHTML = "<h1>kong</h1>";//改成标题
+		p1.innerHTML = "<img src = "https://wx3.sinaimg.cn/mw690/ad049eb5gy1g8dpb11a4bj22c0340hdt.jpg" >";
+		//字面值用单引号  字符串的话 要拼接。
+	}
+	
+
+</script>
+</html>

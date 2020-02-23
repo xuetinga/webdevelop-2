@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		重新加载
+	</title>
+	<style type="text/css">
+		#div1{
+			height: 400px;
+			background-color: pink;
+		} 
+		#div2{
+			height: 400px;
+			background-color: purple;
+		}
+		#div3{
+			height: 400px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<!-- 
+		<button id="btn">reload</button> 
+	-->
+	<button id="hash1"> hash1</button>
+	<button id="hash2"> hash2</button>
+	<button id="hash3"> hash3</button>
+	<div id="div1">
+		div1
+	</div>
+	<div id="div2">
+		div2
+	</div>
+	<div id="div3">
+		div3
+	</div>
+</body>
+<script type="text/javascript">
+	// var btn = getElementById("btn");
+	// btn.onclick = function(){
+	// 	window.location.reload();
+	// }
+	var hash1 = document.getElementById("hash1");
+	var hash2 = document.getElementById("hash2");
+	var hash3 = document.getElementById("hash3");
+	hash1.onclick = function(){
+		window.location.hash = "#div1";
+	}
+	hash2.onclick = function(){
+		window.location.hash = "#div2";
+	}
+	hash3.onclick = function(){
+		window.location.hash = "#div3";
+	}
+</script>
+</html>

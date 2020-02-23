@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>简单事件</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin:0;
+		}
+		.bg{
+			width: 80px;
+			height: 100px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body onkeypress="showCode">
+	<input type="text" name="" onkeypress="showCode(event)" />
+	<div class="bg" id="bg"></div>
+	<a href="http://www.baidu.com" id="link">超链接</a>
+</body>
+<script type="text/javascript">
+	//e.clientX 就是相对于浏览器窗口的距离。
+	var bg = document.getElementById('bg');
+	var link = document.getElementById('link');
+
+	bg.onclick = function(e){
+		console.log(e.clientX,e.clientY);//距离边框的距离。
+		console.log(e.screenX,e.screenY);//距离屏幕的距离。
+		console.log(e.pageX,e.pageY);
+		console.log(e.button);//鼠标按键的情况。
+		console.log(e.keyCode);//键盘的按键情况。unikou码？？
+		console.log(e.which);
+	}
+	function showCode(key){
+		console.log(key.which);
+		console.log(key.keyCode);//就是知道了那个字母的什么码。
+	}
+	link.onclick = function(e){
+		//阻止这个link进行跳转。
+		e.preventDefault();
+		console.log("不会跳转成功");
+	}
+</script>
+</html>

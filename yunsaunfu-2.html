@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>运算符</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript" >
+	var num1 = 0;
+	var num2 = 57;
+	var str1 ="0";
+	var str2 = "10";
+	var boolean1 = true; 
+	//判断变量的值是否相等
+	console.log(num1==str1); //双等于号判断的值是不是大多数指的是数字嘞？
+	console.log(num1 === str1); //错的
+	console.log(str1 === str2);
+	//三个等号是判断值以及类型是否相等
+
+	//三目运算符
+	console.log(num1 >= num2? "是的": "不是的");
+
+	//减法
+	console.log(num1-boolean1);//-1
+
+	//转换成布尔的
+	var b1 = true;
+	var b2 = !b1;//false
+	var b3 = !!num1;//隐式转换  大隐隐于市，小隐隐于野 哈哈哈哈  应该是false
+	var b4 = Boolean(num2);//强制转换。也叫做显示转换。应该是true
+
+	console.log("b3"+b3);
+	console.log(b4);
+
+	//转换成数值的
+	var bb1 = true;
+	var bb2 = false;
+	var bb3 = undefined;
+	var nl = null;
+	var str3 = "180";
+	var str4 = "1a"
+	var num3 = 1.5;
+	var str5 ="";
+	var str6 = "123.2";
+	var str7 ="a2s";
+
+	/*隐世转换。*/
+	var numm1 = bb1+0;
+	var numm2 = bb2 + 0;
+	var numm3 = bb3  +0;
+	var numm4 = nl + 0;
+	var numm6= parseInt(num3);
+	var numm7= parseInt(str4);
+	var numm5 = str5 +0;
+	/*var numm5 = str3 +0;
+	var numm6 = str4 + 0;
+	字符串如果直接相加的话就是拼接了 所以不可以  只能通过显示转换。
+	*/
+	/*
+	parseInt()将其直接转换为整形
+	*/
+	console.log(numm1);//1
+	console.log(numm2);//0
+	console.log(numm3);//NaN
+	console.log(numm4);//0
+	console.log(numm6);//1
+	console.log(numm7);//1 因为字符串4是不空的  不空的就是1
+	console.log(numm5);//0 因为空的字符串是0 加0其实是在进行隐式转换
+	console.log(Number(str5));//0
+	console.log(parseInt(str6));//123
+	console.log(Number(str7));//NaN;
+	document.write(String(num3));
+
+
+</script>
+</html>

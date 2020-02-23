@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>函数的复习</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+
+	//函数的嵌套
+	// function test0(){
+	// 	document.write("hey  kong"+"</br>");
+	// }
+	// function test1(){
+	// 	document.write("执行了test1"+"</br>");
+	// 	return test0();
+	// }
+	// function test2(fn){
+	// 	document.write("执行了test2"+"</br>");
+	// 	document.write(typeof fn);
+	// 	fn(test1);
+	// }
+	// test2(test1);
+	//会先执行test2，在执行test1 在执行test0；
+
+
+	function test0(){
+		document.write("hey  kong can you hear me");
+	}
+	function test1(){
+		document.write("执行了test1"+"</br>");
+		return test0;
+	}
+	function test2(fn){
+		document.write("执行了test2"+"</br>");
+		return test1;
+	}
+	test2(test1)()();
+	//test2(test1) 是一个函数 会执行test2 test2(test1)() 又是一个函数 会执行test1
+	document.write(typeof test2(test1)()());
+
+</script>
+</html>

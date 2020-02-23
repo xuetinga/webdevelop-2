@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>大作业小练习</title>
+	<style type="text/css">
+		.header{
+			background-color: #ccc;
+			color: red;
+			position: relative;
+		}
+		#hb{
+			width: 1000px;
+			height: 20px;
+			margin:0 auto;
+			position: relative;
+			overflow: hidden;
+		}
+		#img{
+			margin-left:300px;
+			float: left;
+		}
+		
+		#box1{
+			width: 1000px;
+			height: 20px;
+			margin-left: 320px;
+			border: 1px solid  black;
+			overflow: hidden;
+			position: absolute;
+		}
+		#warning{
+			width: 320px;
+			position: absolute;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<button id="clear"></button>
+<div class="header">
+		<img src="images/a15.png" id="img">
+		<div id="box1">
+			<div id="warning" style="margin-left: 900px;" >
+				温馨提示最近有不少不法分子在网上骗人，请大家注意
+			</div>	
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var warning = document.getElementById('warning');
+	var btn = document.getElementById('clear');
+	var timer = setInterval(function () {
+		console.log(1);
+	},3000);
+	clear.onclick = function(){
+		clearInterval(timer);
+	}
+	console.log(warning.style.marginLeft);
+	setInterval(function(){
+		if (parseInt(warning.style.marginLeft)<-300) {
+			warning.style.marginLeft = 1000+"px";
+		}
+		else{
+		    warning.style.marginLeft = (parseInt(warning.style.marginLeft)-1) +"px";
+		}
+	},10);
+</script>
+</html>

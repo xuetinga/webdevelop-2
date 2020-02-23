@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>计数的应用</title>
+</head>
+<body>
+	<p id="count">0</p>
+	<button id="start"> 开始爱你</button>
+	<button id="stop">不会停止爱你</button>
+</body>
+<script type="text/javascript">
+	/*
+		点击开始 每隔一秒 加个1
+		点击停止 精致计数
+	*/
+	var count = document.getElementById("count");
+	var start = document.getElementById("start");
+	var stop = document.getElementById("stop");
+	var interval = 0;
+	var countnumber = 0;
+	//这里要仔细看一看 
+	//多点几次的话   就会重叠在一起   效果就是很快 每一个都是隔一秒
+	start.onclick = function(){
+		clearInterval(interval);
+		interval = setInterval(callback,1000);
+		function callback(){
+			
+			countnumber = countnumber +1;
+			count.innerHTML =countnumber;
+			
+		}
+	}
+	stop.onclick = function(){
+		clearInterval(interval);
+	}
+</script>
+</html>

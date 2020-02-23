@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数组的各个方法</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var arr = new Array();
+	arr[0]= "杨和苏";
+	arr[1] = "福克斯";
+	arr[2] = "3";
+	arr[3] = "key";
+	arr[4] = "L";
+	arr[5] = "liu";
+	// var arr2 = [1,2,3,4,5];
+	// var l1 = arr.length;
+	// var y = arr.indexOf("福克斯");
+	// var s = arr.sort();
+	
+	// var arr3 = [1,2,3,4,5,6,78,9,5,2,1,1];
+	// console.log(arr3.sort());//这样排序是不成功的 因为存在大于10的数字。需要传入回调函数。
+	// arr3.sort(function(a,b){
+	// 	return a-b;
+	// });
+	// console.log(arr3);
+	// console.log(l1);
+	// console.log(y);
+	// console.log(s);
+	// console.log(arr.reverse());
+	var j = arr.join("-");//不改变原数组
+	//将数组转化为字符串 并且加上一个符号。
+	console.log(j);
+	console.log(arr);
+	console.log(arr.shift());//删除第一个元素。
+	console.log(arr);
+	console.log(arr.pop());//删除最后一个元素。
+	console.log(arr.slice(0,5));
+	console.log(arr.unshift("第一个"));//这个输出长度。
+	console.log(arr.push("最后一个"));
+//	console.log(arr.concat(arr2));
+	console.log(arr.splice(0,0,"xiao"));
+	console.log(arr);
+	//第二个值设置成0就是删除0个元素 就是不删除 因为他的返回值是删除那个元素，你这里没有删除，所以什么都没输出
+	console.log(arr);
+	//这里在输出就是带着xiao的了，对原数组进行了改变，一般就是没有返回一个新的东西就是对原数组进行了改变。
+
+	console.log(arr.splice(2,2));//从第二个开始删除2个元素，并且输出他的值。
+	console.log(arr);
+	arr.forEach(function(value,index){
+		console.log(value);
+		console.log(index);
+		//console.log(att);
+	})
+	//对arr的每个数组执行一个这个函数，输出一下那个值。
+
+
+
+</script>
+</html>

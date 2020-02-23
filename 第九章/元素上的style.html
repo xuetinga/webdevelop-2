@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>元素上的样式</title>
+	<style type="text/css">
+		#container{
+			height: 100px;
+			width: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container" style="background-color: blue;">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	var container = document.getElementById("container");
+	container.onclick = function () {
+		// console.log(this.getAttribute("style"));//就是直接输出属性。
+		// console.log(this.style);//this.style 是个对象 可以赋值
+		//style是个对象 封装了元素的所有样式，样式名字的写法，单个单词就是小写 之前那种有横线连接的就是驼峰命名法。去掉横线，第二个字母首字母大写
+		//通过这样设置就表现为行内样式，优先级比较高，会直接在元素的标签内显示。
+		// this.style.backgroundColor = "pink";//点击就可以换色。
+		// this.style.width = "400px";//表现为行内样式
+		// //获取样式 在获取样式时，该样式必须是元素的行内样式。
+		// var bg = this.style.backgroundColor;
+		// console.log(bg);
+
+	}
+</script>
+</html>

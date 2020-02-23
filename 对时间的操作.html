@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>日期的应用</title>
+</head>
+<body>
+	<p id="timer"> </p>
+	<button id="btn"  >获取当前时间</button>
+</body>
+<script type="text/javascript">
+	/* 
+		点击btn按钮时，设置p标记内部内容为当前时间，2019-10-14 10:10:52 
+	*/
+	//获取元素通过id
+	//btn存储的是对象 就是对那个网页元素的抽象  
+	
+	//btn和timer也是对象
+	
+	//如何完成拼接?
+	//点击按钮的时候 会执行这个代码
+
+	btn.onclick = function(){
+	var btn = document.getElementById("btn");
+	var timer = document.getElementById("timer");
+	var date1 = new Date();
+	var year  = date1.getFullYear();
+	var month  = date1.getMonth() + 1 ;
+	var datruey = date1.getDate();
+	if () {}
+	var dateStr = (year +"-"+  month +"-"+ day);
+
+	
+	timer.innerHTML = dateStr;
+	//timer是一个对象 对页面的元素实际产生影响
+
+	}
+	
+</script>
+</html>

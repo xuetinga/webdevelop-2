@@ -1,0 +1,22 @@
+<html>
+<head>
+<script type="text/javascript">
+	var x=document.getElementById("myHeader");
+	var arr =["张漂亮","李努力", "宋开心", "王可爱"];
+	var a=0;
+	var b=arr.length;
+	function getValue()
+ 	 {
+ 	 var num = Math.floor(Math.random() * eval(b) + eval(a));
+ 	
+ 	 document.write(x.innerHTML);
+ 	 }
+
+</script>
+</head>
+<body>
+
+<p id="myHeader" onclick="getValue()">请点击此处</p>
+
+</body>
+</html>

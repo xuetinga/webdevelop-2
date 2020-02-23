@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>stpoPropagation</title>
+</head>
+<body>
+	<div id="container">
+		<button id="btn">子元素</button>
+
+	</div>
+</body>
+<script type="text/javascript">
+	/**
+		内部元素触发事件时，会逐级的向外传递，该过程称为事件的冒泡过程。
+		可以使用事件对象的stopPropagation 这个组织事件的方法来让他不往外一层一层的的执行。
+	*/
+	var container = document.getElementById('container');
+	var btn  = document.getElementById('btn');
+	var bodyObj = document.body;//得到body对象。
+	//事件触发是从里到外的 就是事件的冒泡过程。
+	container.onclick = function(){
+		console.log("container被点击了");
+
+	}
+	btn.onclick = function(e){
+		console.log(e.target);
+		console.log(e.currentTarget);//当前监听事件的的元素，
+		console.log(e.timeStamp);//时间戳
+		e.stopPropagation();
+		console.log("按钮被点击了");
+	}
+	bodyObj.onclick = function(e){
+
+		console.log("body被点击了");
+	}
+</script>
+</html>

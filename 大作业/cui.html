@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>shuff</title>
+	<script src="animate.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#top{
+			height:20px;
+			background-color: gray;
+			background-image: url(images/a15.png);
+			background-position: 15% 50%;
+			background-repeat: no-repeat;
+		}
+		#topper{
+			width: 1000px;
+			margin: auto;
+			overflow: hidden;
+		}
+		.bg{
+			color: red;
+			width:400px;
+			height:20px;
+			font-size:13px;
+			float: right;
+			display: inline-block;
+		}
+		.pive{
+			width:1200px;
+			height:383px;
+			margin: 10px auto; 
+			position: relative;
+			overflow: hidden;
+		}
+		.slider{
+			width:8400px;
+			position: absolute;
+			left: -1200px;
+		}
+		.slide{
+			width:1200px;
+			overflow: hidden;
+			float:left;
+		}
+		.pive>span{
+			display: block;
+			width: 30px;
+			height: 50px;
+			text-align: center;
+			cursor: pointer;
+			color: white;
+			top: 175px;
+			line-height: 50px;
+			background: rgb(255,0,0);
+			font-size: 30px;
+			position: absolute;
+			opacity: 0;
+		}
+		#left{
+			left:30px;
+		}
+		#right{
+			right:30px;
+		}
+		ul,li{
+			list-style: none;
+		}
+		.nav{
+			position: absolute;
+			left: 500px;
+			bottom: 20px;
+		}
+		.nav>li{
+			float: left;
+			width:20px;
+			height: 20px;
+			background-color: #ccc;
+			cursor: pointer;
+			margin: 0 10px;
+			border-radius: 50% ;
+			text-align: center;
+		}
+		.nav .active{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="top">
+		<div id="topper">		
+			<div class="bg" style="margin-right: 0px;">
+				温馨提示：最近有不少非法分子在网上骗人，请大家注意
+			</div>
+		</div>	
+	</div>
+	<div class="pive" id="pive" >	
+		<div class="slider" id="slider">
+			<div class="slide"><img src="images/b5.png"></div>
+			<div class="slide"><img src="images/b1.png"></div>
+			<div class="slide"><img src="images/b2.png"></div>
+			<div class="slide"><img src="images/b3.png"></div>
+			<div class="slide"><img src="images/b4.png"></div>
+			<div class="slide"><img src="images/b5.png"></div>
+			<div class="slide"><img src="images/b1.png"></div>
+		</div>
+		<span id="left"><</span>
+		<span id="right">></span>
+		
+		<ul class="nav" id="nav">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	var bg = document.getElementsByClassName("bg")[0];
+	var pive = document.getElementById("pive");
+	var oNavlist = document.getElementById("nav").children;
+	var slider = document.getElementById("slider");
+	var left = document.getElementById("left");
+	var right = document.getElementById("right");
+	var index = 1;
+	var timer;
+	var isMoving = false;
+	var intervalId;
+	funk();
+	function funk(){
+		if(parseInt(bg.style.marginRight) == 950){			
+	    	bg.style.marginRight = 0 + "px";
+	    	return;
+	    }
+			bg.style.marginRight = (parseInt(bg.style.marginRight)+1)+"px";	
+        }	
+	intervalId = setInterval(funk,10);
+	function next(){	
+		index++;
+		newli();
+		animate(slider,{left:-1200*index},function(){
+	 		if(index === 6){
+	 			slider.style.left = "-1200px";
+	 			index = 1; 
+	 		}
+	 	});
+	 	console.log(index);
+	}
+	function prev(){
+	 	index--;
+	 	newli();
+	 	animate(slider,{left:-1200*index},function(){
+	 		if(index === 0){
+	 			slider.style.left = "-6000px";
+	 			index = 5; 
+	 		}
+	 	});
+	 	console.log(index);
+	}
+	var timer = setInterval(next,2000);
+	//鼠标划入清楚定时器
+	pive.onmouseover = function(){
+	 	animate(left,{opacity:50});
+	 	animate(right,{opacity:50});
+	 	clearInterval(timer);
+	}
+	 //鼠标画出开启定时器
+	pive.onmouseout = function(){
+	 	animate(left,{opacity:0});
+	 	animate(right,{opacity:0});
+	 	timer = setInterval(next,3000);
+	}
+	right.onclick = next;
+	left.onclick = prev;
+	for(var i = 0;i<oNavlist.length;i++){
+	 	oNavlist[i].idx = i;
+	 	oNavlist[i].onclick  = function(){
+	 		index = this.idx + 1;
+	 		newli();
+	 		animate(slider,{left:-1200*index});
+	 	}
+	}
+	function newli(){
+	 	for(var i = 0;i<oNavlist.length;i++){
+	 		oNavlist[i].className = ' ';
+	 	}
+	 	if(index == 6){
+	 		index = 1;
+	 		oNavlist[0].className = "active";
+	 	}else if(index == 0){
+	 	    index = 5;
+	 		oNavlist[4].className = "active";
+	 	}else{
+	 		oNavlist[index-1].className = "active";
+	 	}	
+	}
+</script>
+</html>
+
+
+

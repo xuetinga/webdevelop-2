@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>history对象</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<!-- 就是前进后退的额哪里 -->
+	<button id="btn1">前进</button>
+	<button id="btn2">后退</button>
+	<button id="btn3">
+		刷新
+	</button>
+	<a href="http://www.baidu.com">百度</a>
+
+</body>
+<script type="text/javascript">
+	var btnobj1 = document.getElementById("btn1");
+	var btnobj2 = document.getElementById("btn2");
+	var btn3 = document.getElementById("btn3");
+
+	btn1.onclick = function(){
+		//window.history.forward();
+		//对象的属性可以是一个对象 所以就会有好多点
+		window.history.go(1);
+		//这里面写012 或者-1
+
+	}
+	btn2.onclick = function(){
+		//window.history.back();
+		//这里没有弄好  在弄弄
+		window.history.go(-1);
+
+	}
+	btn3.onclick = function(){
+		window.history.go(0);
+		//如果是go0的话，是刷新当前的页面！
+		
+	}
+ </script>
+</html>

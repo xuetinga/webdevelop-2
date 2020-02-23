@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>小测练习</title>
+</head>
+<body>
+	<p id="p"></p>
+	<button id="btn1">停止</button>
+	<button id="btn2">继续</button>
+
+</body>
+<script type="text/javascript">
+	var obj1=new Object;
+	var obj2 = new Object(name,age );
+	var obj={name:'lily'};
+	obj.name='ann';
+	alert(obj.name);
+	var aa=[1,2,3]; 
+	var bb=[1,2,3];
+	console.log(aa);
+	console.log(bb); 
+	console.log(aa==bb);
+	var a=3,b=4,c=3,d=8,m=3,n=2;
+	a++;
+	console.log(a*=b-4);
+	console.log(a == b);
+	console.log((m=a>b)&&(n=c>d));
+	console.log(m);
+	console.log(n);
+	var btn1 = document.getElementById("btn1");
+	var btn2 = document.getElementById("btn2");
+	var date = new Date();
+	var time  = date.getFullYear();
+	p.innerHTML =time;
+	btn1.onclick = function(){
+		p.innerHTML = "不显示";
+	}
+	btn2.onclick =function(){
+		p.innerHTML = p.innerHTML;
+	}
+
+	var count=2;
+	var User = {
+	count: 1,
+	getCount: function() {return this.count; }
+    	      }
+	console.log(User.getCount());
+	var array = ['a','b','d'];
+	array.length = 2;
+	console.log(array);
+	var array1 = new Array();
+	array1[0] = "1";
+	alert(array1);
+
+	console.log(undefined == null);
+	var a = new Object( ); 
+	a.value = 1; 
+	console.log(a);
+	var str = "/user/images/bg.jpg";
+	var arr = str.split("/");
+	console.log(arr[3]);
+	var arr1  = str.indexOf("bg.jpg");
+	console.log(str.substr(arr1,str.length));
+	var arr2 = new Array();
+	var i =0;
+	var num = Math.random()*100;
+		if (num>=10) {
+			arr2.push(num);
+			i++;
+		}
+		while(i==10) {
+			console.log(arr2);
+		}
+	
+	console.log(arr2);
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>电影这个对象</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var movie = {
+		movieName : "杀死比尔",
+		movieType :"悬疑片 剧情片",
+		movieDirect : "昆汀",
+		movieNum :"9.6",
+		movieAge:"ten",
+		showtime :["8.00","12.00","14.00"],
+		show :function(){
+			document.write("该片介绍了一个女生复仇的故事，这部片女生杀了比尔身边的人。");
+		},
+		getNextShow:function(){
+			var time = 6;
+			for(var i =0;i<this.showtime.length;i++){
+				if (parseInt(this.showtime[i]) > time){
+					return this.showtime[i];
+				}
+			}
+		}
+	}
+	document.write(movie.getNextShow());
+	var movie1 = {
+		movieName : "杀死比尔2",
+		movieType :"悬疑片 剧情片",
+		movieDirect : "昆汀塔伦提诺",
+		movieNum :"9.7",
+		movieAge:"ten",
+		showtime :["10.00","12.00","14.00"],
+		show :function(){
+			document.write("该片介绍了一个女生复仇的故事，这部片女生将她之前的所爱之人杀掉啦");
+		}
+	}
+
+	for(var key in movie){
+		document.write(key+":"+'<br/>');
+		document.write(movie[key]+'<br/>');
+	}
+	alert(movie);
+</script>
+</html>

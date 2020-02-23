@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>流程控制结构</title>
+	<meta charset="utf-8">
+<!-- 	<style type="text/css">
+		td{
+			border:1px solid pink;
+
+		}
+
+
+	</style> -->
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	alert("hey beautiful girl"); 
+	alert("娜儿");
+
+	// //if else
+	// var box =100;
+	// if (box >=100) {
+	// 	alert("甲等");
+	// }
+	// else if(box>=80) {
+	// 	alert("乙等");
+	//  }
+	// else if(box >= 60) {
+	// 	alert("丙等");
+	//  }
+	// else{
+	// 	alert("不及格");
+	// 	}
+
+	// //switch case
+	// var score= "不好";
+	// switch(score){
+	// 	case"优秀":
+	// 		document.write("成绩优秀");
+	// 		break;
+	// 	case"不及格":
+	// 		document.write("成不太好");
+	// 		break;
+	// 	default:
+	// 		document.write("该同成学不俺绩知"+"<br/>");
+	// }
+
+	// //循环语句
+	// for (var i = 1; i <10; i++) {
+
+	// 	for(var j=1 ;j<=i; j++)
+	// 	{
+	// 		document.write(i +"*"+ j+ '= ' +i*j +" ");
+	// 	}
+	// 	document.write("<br/>");
+
+	// }
+	
+	//重点掌握输出的结果 什么加什么的欧！！
+
+	//打印表格
+	//1.写入table标记 2. 写入行标记tr 3.写入标记td
+	document.write("<table border='2' align='center' height='30px' widtn='40px' borderColor = 'pink'>");
+
+	for (var i =0; i < 4; i++) {
+		document.write("<tr>");
+		for (var j = 0; j < 4; j++)
+		 //这里不能在写i了，会把上面的覆盖掉。
+		{
+			document.write("<td>");
+			document.write('hey');
+			document.write("</td>");
+		}
+		document.write("</tr>");
+		}
+	document.write("</table>");
+
+	//用while打印。
+
+	var k=4;
+	document.write("<table border='1' align='center' height='20px' widtn='20px'  >");
+		while(k>0){
+			var m=4;
+
+			document.write("<tr>");
+
+			while(m>0){
+				document.write("<td>");
+				document.write('htygh');
+				document.write("</td>");
+				m--;
+			}
+			document.write("</tr>");
+			k--;
+		}
+	document.write("</table>");
+
+	function sum(x,y){
+		return x + y;
+	}
+	num =10;
+	document.write(num);
+	document.write(sum(2) + "<br/>"); //NaN 在这里的y是undefined
+	document.write(sum(2,5) + "<br/>");//7
+	document.write(sum(2,5,9) + "<br/>");//7
+
+		
+	
+</script>
+
+</html>

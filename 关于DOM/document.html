@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<!-- 会有一个集合
+childnodes 包含 head body script这些个节点 
+ -->
+<!-- firstchild 第一个子节点 -->
+<head>
+	<title>Dom元素节点</title>
+	<style type="text/css">
+		#container{
+			height: 500px;
+			width: 200px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		通过对象和相应的方法得到啊另一个对象，得到元素结点，这个元素可以是div可以是图片。
+		<p>子节点</p>
+	</div id ="container1">
+	<div>
+		<p>子节点</p>
+		p跟上面的不是兄弟节点，因为他们要有相同的父级节点
+		div跟上面的是同级结构
+	</div>
+</body>
+<script type="text/javascript">
+	//script可以称为最后一个子节点 lastchild
+	/*
+		在对象的方法内部。this指向当前对象。
+		dom对象的事件的回调函数内部，this指向当前的dom对象。
+	*/
+	//绑定时间来获取属性,这里这个点 事件属性也是对象属性
+	var container = document.getElementById("container");
+	container.onclick =  function(){
+		console.log(this.id);
+
+		//console.log(this.height);
+	};
+	
+	console.log(container);
+</script>
+</html>

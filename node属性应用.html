@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>node属性</title>
+</head>
+<body id="container">
+    <p>段落1</p>
+    <h3>标题3</h3>
+    <div>div1</div>
+    <h2>标题2</h2>
+    <div>div2</div>
+    <p>段落2</p>
+    <h1>标题1</h1>
+
+</body>
+<script type="text/javascript">
+	/*
+		获取container内部段落和div内部标记的内容
+		存储到arr数组之中，在控制台输出。
+	*/
+	var container = document.getElementById("container");
+	var tagName = container.children;
+	console.log();
+	var arr1 = [];
+	// for (var i = 0; i < tagName.length; i++) {
+	// 	for (var j = 0; j < tagName.length;j++) {
+	// 		if(tagName[i].nodeName=="P" ){
+	// 			arr1[j] = tagName[i];
+	// 		}
+	// 		else if(tagName[i].nodeName == "DIV"){
+	// 			arr1[j] = tagName[i]
+	// 		}
+	// 	}	
+	// }
+	for (var i = 0; i < tagName.length; i++) {
+		var elName = tagName[i].nodeName;
+		if (elName=="P" || elName == "DIV") {
+			arr1.push(tagName[i].innerHTML);
+		}
+	}
+	console.log(arr1);
+</script>
+</html>

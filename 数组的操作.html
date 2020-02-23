@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数组的方法</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var arr1 = [2,3,4,5,6,2,2,4,];
+	var s1 = arr1.sort(function(a,b){
+		return a-b;
+	});
+	//进行排序
+	document.write(s1 +'<br/>');
+
+	//将字符串反转
+	var s2 = arr1.reverse();
+	document.write(s2 +'<br/>');
+
+	//想用什么字符连接。
+	var s3 = arr1.join("-");
+	document.write(s3 +'<br/>');
+
+	//在转换回去，将那个符号删掉。
+	var s4 = s3.split("-");
+	document.write(s4 +'<br/>');
+
+	/*
+	删除一个元素
+	方法的名称，参数返回值
+	*/
+	var arr2 = [1,8,3,3,1,0,9,3,6,0,9];
+	var ss1 = arr2.shift();//删除第一个元素并且返回（输出）那一个元素。会对原数组产生影响。
+	document.write(ss1+'<br/>');//删除的元素
+	document.write(arr2+'<br/>');//删除之后的数组。
+
+	var ss2 = arr2.pop();//删除最后一个元素并返回最后一个元素。会对原数组产生影响
+
+	document.write(ss2+'<br/>');//删除的那个元素
+	document.write(arr2+'<br/>');//删除之后的那个数组
+
+	var ss3 = arr2.slice(0,3);//对数组分段，不会对原数组产生影响。是得到了一个新的数组。
+	document.write(ss3+'<br/>');
+	document.write(arr2+'<br/>');
+
+
+	var ss4 = arr2.splice(0,2);//删除数组的元素，会对原数组产生影响。第一个参数时元素的位置，第二个是他后面的个数。
+	document.write(ss4+'<br/>');//删除的那好几个元素
+	document.write(arr2+'<br/>');//删除之后的数组，会有变化
+
+	/*
+	定义一个函数，传入参数。判断传入的姓氏是否在数组之中。如果存在，删除姓氏后面的连个姓氏；
+
+	*/
+	var arr3 = ["赵","钱","损","里","周"];
+	function c1 (Name){
+		var index = arr3.indexOf(Name);
+		if(index == -1){
+			document.write("行使不存在");
+		}
+		else{
+			var arr5= arr3.splice(index+1,2);
+
+		}
+		return arr5;
+
+	}
+	
+	c1("赵");
+	document.write(c1("赵"));
+	//截取
+	function getArr(Name)
+{
+	var index = arr.indexOf(Name);
+	if (index == -1) {
+		document.write("不存在");
+
+	}
+	else{
+		var arr4 = arr3.slice(index+1,index+2);
+	}
+	return arr4;
+
+}
+    getArr("钱");
+    document.write(getArr("钱"));
+
+
+	
+
+</script>
+</html>

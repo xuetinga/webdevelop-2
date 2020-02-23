@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>构造函数-2</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function Student(userName,age)
+{
+	this.userName = userName;
+	this.age =age;
+	this.showAge = function(){
+		console.log(this.age);
+//在定义的对象上的方法内部，this指代生成的当前对象。
+}
+}
+var student = new Student("张美丽",18);
+console.log(student);
+//Student {userName: "张美丽", age: 18, showAge: ƒ}
+//这里是输出结果看看怎样将这个f改掉。
+	function CreateDesk(color,weight,height,width){
+		this.color =color;
+		this.weight =weight;
+		this.height =height;
+		this.width = width;
+		this.showColor = function(){
+			console.log(this.color);
+		}
+	}
+	desk = new CreateDesk("PINK","200","100","300");
+	document.write(desk);
+
+</script>
+</html>

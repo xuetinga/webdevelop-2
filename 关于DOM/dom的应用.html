@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dom的应用</title>
+</head>
+<body>
+	<ul id="list">
+		<li class="bg">香蕉</li>
+		<li class="bg">苹果</li>
+		<li class="bg">梨</li>
+	</ul>
+	<ul>
+		<li>橘子</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	/*根据id属性值得到特定的网页元素得到对应的网页元素对象*/
+	var list = document.getElementById("list");//他就是一个dom对象 z这是在整个的dom元素里面获取
+
+	/*根据网页元素的标记得到dom对象的集合（数组)*/
+	var arr = list.getElementsByTagName("li");//通过标签的	arr是一个数组(因为是elements) 的格式，里面存储的是dom对象 这是在list这个dom对象里面获取。
+
+	for (var i = 0; i < arr.length; i++) {
+		arr[i].innerHTML = arr[i].innerHTML + i;//然后在页面之中就会拼接上那个索引。
+	}
+	var arr1 = list.getElementsByClassName("bg");//注意有s
+	for (var i = 0; i < arr1.length; i++) {
+		arr1[i].style.color = "pink";//将网页元素的样式抽象得到了一个样式。这也是一个对象。
+	}
+</script>
+</html>

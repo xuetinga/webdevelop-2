@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>求质数之和</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function sum(n){
+		var f =false;
+		var i =2;
+		var j =2;
+		var sum =0;
+		while(i<=n){
+			f = true;
+			while(j<= i/2){
+				if(i % j ==0){
+					f = false;
+					break;
+				}
+				j++;
+			}
+			if(f){
+				sum+=i;
+			}
+			j=2;
+			i++;
+		}
+		document.write(sum);
+		}
+		sum(20);
+
+</script>
+</html>

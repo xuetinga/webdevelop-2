@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>for循环获取</title>
+</head>
+<body>
+	<p>段落1</p>
+	<p>段落2</p>
+	<p>段落3</p>
+</body>
+<script type="text/javascript">
+	/*
+		所有的dom操作都是针对dom对象的。
+		如果是集合的话。要记得添加索引。
+
+	*/
+	var pList = document.getElementsByTagName("p");
+	var arr = ["hey","kong","!"];
+	for (var i = 0; i < pList.length; i++) {
+		document.write(pList[i].innerHTML);
+		pList[i].innerHTML = arr[i];
+		document.write(pList[i].innerHTML);
+		//innerHtml 针对网页元素是双标记标签的是时候使用这个方法。
+	}
+	var htmlDom = document.documentElement;
+	var headDom = document.head;
+	var bodyDom = document.body;
+	console.log(htmlDom);
+	console.log(headDom);
+	console.log(bodyDom);
+</script>
+</html>

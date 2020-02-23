@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>对话框</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	window.alert("你好哇");
+//最终的结果在pr里面  所以对pr进行操作就行
+	var pr = prompt("可以告诉我你的微信号码吗？","输入一个式子哦");
+	result = eval(pr);
+	document.write(result);
+	/*
+		在输入框中输入算术的运算式子，点击确定，得到结果。并且alrert进行显示
+		eval()
+		直接得到结果
+	*/
+	/*
+		用户名 密码 用；分割
+		验证输入的用户名密码是否俄为admin123
+	*/
+	var inputContent = prompt("请输入用户名密码");
+	var arr = inputContent.split(";");
+	if(arr[0] == admin &&  arr[1] == "123"){
+		alert("登陆成功啦");
+	}
+	else{
+		alert("登录失败了");
+	}
+</script>
+</html>

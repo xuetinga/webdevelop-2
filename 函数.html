@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>函数与事件处理</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	//使用关键字定义
+	function fn1(arg1){
+		return arg1;
+	}
+	document.write(fn1("hey kong"+'<br/>'));
+
+	//匿名函数
+	(function(){
+		//var i =1;
+		document.write("hey kong  can you hear me ");
+	})()
+	//这是一个特殊的函数 没有名字,函数只执行一次，而且想让他形成自己的一个作用域，如果在里面定义一个i，在外面是访问不到的.
+
+	//匿名函数传递参数???
+	(function(userName)
+	{
+		console.log(userName);
+	})("liucong")//会输出liucong
+	
+	//到某个特定时候执行的函数???
+	window.onload = function(){
+		document.write("hello 页面加载完成");
+	}
+
+	//赋给变量 对 就是赋给变量
+	var add = function(num1,num2){
+		return num1+num2;
+
+	}
+	console.log(add(1,2));
+
+
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>延迟执行</title>
+</head>
+<body>
+	<button id="stop"> 停止延迟</button>
+	
+</body>
+<script type="text/javascript">
+	var intervalId = setTimeout(function(){
+		alert("看着时间 说句爱你3000遍")
+	},3000);//这里的时间是毫秒  一秒等于1000毫秒
+	
+	var stop = document.getElementById("stop");
+	stop.onclick = function(){
+		clearTimeout(intervalId);
+	}
+	//这里两个常用方法
+	//settimeout  clearTimeout
+
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>innertext</title>
+</head>
+<body>
+	<ul id="list">
+		<li class="bg">刘炫廷</li>
+		<li class="bg">潘潘</li>
+		<li class="bg">福克斯</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	var list = document.getElementById("list");
+	//list.innerHTML = "<h1>马王</h1>";//这一个浏览器会进行解析，解析标记
+
+	/*设置纯文本内容*/
+	//list.innerText = "<h1>新疆马王</h1>";//这一个直接显示引号里面的内容
+	//直接获取innertext
+	console.log(list.innerText);
+	//这里会输出纯文本 就会把标记过滤掉。
+
+</script>
+</html>

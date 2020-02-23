@@ -1,0 +1,24 @@
+<!DOCTYPE >
+<html >
+ <head>
+	<title>事件触发 </title>
+	<meta charset="utf-8">
+ </head>
+ <body>
+ 	<p id="p">请点击此处获取姓名<p>
+ 	<P id = "s"></P>
+ </body>
+ <script type="text/javascript">
+ 	p.onclick= function(){
+ 	var s = document.getElementById("s");
+	var p = document.getElementById("p");
+	var arr =["张漂亮","李努力", "宋开心", "王可爱"];
+	var a=0;
+	var b=arr.length;
+	var num = Math.floor(Math.random()*eval(b)+eval(a));
+	s.innerHTML = arr[num];
+ 	}
+	
+ 	
+ </script>
+</html>
